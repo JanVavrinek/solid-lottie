@@ -1,0 +1,70 @@
+{
+  "name": "solid-lottie",
+  "version": "0.0.1",
+  "description": "Solid wrapper of lottie-web",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "solid": "./dist/source/index.jsx",
+      "import": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "node": "./dist/cjs/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "lottie",
+    "lottie-web",
+    "solid"
+  ],
+  "author": "Jan Vavřínek",
+  "license": "MIT",
+  "sideEffects": false,
+  "homepage": "https://github.com/JanVavrinek/solid-lottie",
+  "bugs":{"url": "https://github.com/JanVavrinek/solid-lottie/issues"},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JanVavrinek/solid-lottie.git"
+  },
+  "scripts": {
+    "build": "rollup -c && pnpm run minify",
+    "minify": "terser --compress --mangle --module -- dist/cjs/index.js > dist/cjs/index.min.js",
+    "format": "prettier --write src",
+    "test": "vitest",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --fix",
+    "prettier": "prettier --config .prettierrc \"./src/**/*.{ts,tsx}\" --write"
+  },
+  "dependencies": {
+    "lottie-web": "^5.10.1",
+    "solid-testing-library": "^0.5.0"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.5.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.3.0",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1",
+    "rollup": "^3.9.1",
+    "rollup-preset-solid": "^2.0.1",
+    "solid-js": "^1.6.7",
+    "terser": "^5.16.1",
+    "typescript": "^4.9.4",
+    "vitest": "^0.27.2"
+  }
+}
